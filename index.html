@@ -3,477 +3,370 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MathHacks - Math-Themed Hackathon</title>
-    <meta name="description" content="MathHacks is an innovative math-themed hackathon bringing together students, developers, and math enthusiasts to solve real-world problems using mathematical thinking.">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <title>MathHacks</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segill UI', sans-serif;
+            background: linear-gradient(0deg, #46014b 0%, #600723 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Mathematical symbols background */
+        .bg-symbols {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        /* Cyber grid overlay */
+        .cyber-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(174, 0, 161, 0.15) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(174, 0, 161, 0.15) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 1;
+            z-index: 0;
+            mask: radial-gradient(ellipse at center, white 0%, white 15%, rgba(255,255,255,0.8) 28%, rgba(255,255,255,0.6) 38%, rgba(255,255,255,0.4) 55%, rgba(255,255,255,0.25) 75%, rgba(255,255,255,0.15) 100%);
+            -webkit-mask: radial-gradient(ellipse at center, white 0%, white 15%, rgba(255,255,255,0.8) 28%, rgba(255,255,255,0.6) 38%, rgba(255,255,255,0.4) 55%, rgba(255,255,255,0.25) 75%, rgba(255,255,255,0.15) 100%);
+        }
+
+
+        .symbol {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 2rem;
+            font-weight: 300;
+            animation: float 6s ease-in-out infinite;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .symbol:nth-child(1) { top: 17%; left: 23%; animation-delay: 0s; }
+        .symbol:nth-child(2) { top: 73%; right: 41%; animation-delay: -0.8s; }
+        .symbol:nth-child(3) { top: 91%; left: 67%; animation-delay: -1.6s; }
+        .symbol:nth-child(4) { top: 6%; right: 29%; animation-delay: -2.4s; }
+        .symbol:nth-child(5) { top: 54%; left: 84%; animation-delay: -3.2s; }
+        .symbol:nth-child(6) { top: 39%; right: 73%; animation-delay: -4.0s; }
+        .symbol:nth-child(7) { top: 82%; left: 16%; animation-delay: -0.4s; }
+        .symbol:nth-child(8) { top: 27%; right: 58%; animation-delay: -1.2s; }
+        .symbol:nth-child(9) { top: 64%; left: 91%; animation-delay: -2.0s; }
+        .symbol:nth-child(10) { top: 11%; left: 47%; animation-delay: -2.8s; }
+        .symbol:nth-child(11) { top: 78%; right: 14%; animation-delay: -3.6s; }
+        .symbol:nth-child(12) { top: 33%; left: 76%; animation-delay: -0.6s; }
+        .symbol:nth-child(13) { top: 89%; right: 82%; animation-delay: -1.4s; }
+        .symbol:nth-child(14) { top: 21%; left: 36%; animation-delay: -2.2s; }
+        .symbol:nth-child(15) { top: 67%; right: 93%; animation-delay: -3.0s; }
+        .symbol:nth-child(16) { top: 44%; left: 19%; animation-delay: -3.8s; }
+        .symbol:nth-child(17) { top: 8%; left: 61%; animation-delay: -0.2s; }
+        .symbol:nth-child(18) { top: 76%; right: 37%; animation-delay: -1.0s; }
+        .symbol:nth-child(19) { top: 52%; left: 88%; animation-delay: -1.8s; }
+        .symbol:nth-child(20) { top: 29%; right: 71%; animation-delay: -2.6s; }
+        .symbol:nth-child(21) { top: 95%; left: 42%; animation-delay: -3.4s; }
+        .symbol:nth-child(22) { top: 13%; right: 86%; animation-delay: -4.2s; }
+        .symbol:nth-child(23) { top: 71%; left: 24%; animation-delay: -0.6s; }
+        .symbol:nth-child(24) { top: 48%; right: 59%; animation-delay: -1.4s; }
+        .symbol:nth-child(25) { top: 86%; left: 77%; animation-delay: -2.2s; }
+        .symbol:nth-child(26) { top: 19%; left: 53%; animation-delay: -3.0s; }
+        .symbol:nth-child(27) { top: 61%; right: 31%; animation-delay: -3.8s; }
+        .symbol:nth-child(28) { top: 37%; left: 94%; animation-delay: -0.8s; }
+        .symbol:nth-child(29) { top: 84%; right: 68%; animation-delay: -1.6s; }
+        .symbol:nth-child(30) { top: 26%; left: 12%; animation-delay: -2.4s; }
+        .symbol:nth-child(31) { top: 74%; right: 45%; animation-delay: -3.2s; }
+        .symbol:nth-child(32) { top: 41%; left: 83%; animation-delay: -4.0s; }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px) translateX(0px) rotate(0deg); 
+            }
+            25% { 
+                transform: translateY(-15px) translateX(10px) rotate(5deg); 
+            }
+            50% { 
+                transform: translateY(-20px) translateX(0px) rotate(0deg); 
+            }
+            75% { 
+                transform: translateY(-10px) translateX(-10px) rotate(-5deg); 
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .content {
+            text-align: center;
+            color: white;
+            max-width: 600px;
+        }
+
+        .logo-container {
+            margin-bottom: 2rem;
+        }
+
+        .logo {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 1rem;
+            background: rgba(255, 255, 255, 0.063);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(2px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            /* box-shadow: 0 8px 32px rgba(105, 105, 105, 0.3); */
+        }
+
+        .logo svg {
+            width: 60px;
+            height: 60px;
+        }
+
+        .title {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #ff0043 0%, #ff0043 25%, #ae00a1 50%, #9600b6 75%, #9430cb 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: none;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .event-details {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .event-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .info-item {
+            text-align: center;
+        }
+
+        .info-label {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff0043, #ae00a1);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(255, 0, 67, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(255, 0, 67, 0.5);
+        }
+
+        .social-links {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .social-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .social-link:hover {
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 3rem;
+            }
+            
+            .subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .description {
+                font-size: 1.1rem;
+            }
+            
+            .event-info {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span class="math-symbol">∫</span>
-                <span>MathHacks</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#about">About</a></li>
-                <li><a href="#schedule">Schedule</a></li>
-                <li><a href="#prizes">Prizes</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#register" class="register-btn">Register</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+    <div class="cyber-grid"></div>
+    
+    <div class="bg-symbols">
+        <div class="symbol">+</div>
+        <div class="symbol">×</div>
+        <div class="symbol">÷</div>
+        <div class="symbol">−</div>
+        <div class="symbol">+</div>
+        <div class="symbol">×</div>
+        <div class="symbol">÷</div>
+        <div class="symbol">−</div>
+        <div class="symbol">+</div>
+        <div class="symbol">×</div>
+        <div class="symbol">÷</div>
+        <div class="symbol">−</div>
+        <div class="symbol">+</div>
+        <div class="symbol">×</div>
+        <div class="symbol">÷</div>
+        <div class="symbol">−</div>
+        <div class="symbol">+</div>
+        <div class="symbol">×</div>
+        <div class="symbol">÷</div>
+        <div class="symbol">−</div>
+        <div class="symbol">+</div>
+        <div class="symbol">×</div>
+        <div class="symbol">÷</div>
+        <div class="symbol">−</div>
+        <div class="symbol">+</div>
+        <div class="symbol">×</div>
+        <div class="symbol">÷</div>
+        <div class="symbol">−</div>
+        <div class="symbol">+</div>
+        <div class="symbol">×</div>
+        <div class="symbol">÷</div>
+        <div class="symbol">−</div>
+    </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="math-background">
-                <span class="floating-math">π</span>
-                <span class="floating-math">∑</span>
-                <span class="floating-math">∆</span>
-                <span class="floating-math">∞</span>
-                <span class="floating-math">√</span>
-                <span class="floating-math">∫</span>
+    <div class="container">
+        <div class="content">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="assets/logo/Logo (Plain).png" alt="MathHacks" class="brand-logo" width="212" height="212s">
+                </div>
             </div>
-            <h1 class="hero-title">
-                Math<span class="highlight">Hacks</span>
-                <span class="math-accent">2024</span>
-            </h1>
-            <p class="hero-subtitle">Where Mathematics Meets Innovation</p>
-            <p class="hero-description">
-                Join us for 48 hours of mathematical problem-solving, coding, and creativity. 
-                Build solutions that make math accessible, beautiful, and impactful.
+
+            <h1 class="title">MathHacks</h1>
+            <p class="subtitle">Learn the foundations of programming</p>
+            <p class="description">
+                We're a math-themed hackathon designed for high school students interested in computer science. We focus on your learning, not the trends or fluff.
             </p>
-            <div class="hero-details">
-                <div class="detail">
-                    <span class="icon">📅</span>
-                    <span>March 15-17, 2024</span>
-                </div>
-                <div class="detail">
-                    <span class="icon">📍</span>
-                    <span>University Campus</span>
-                </div>
-                <div class="detail">
-                    <span class="icon">👥</span>
-                    <span>200+ Participants</span>
-                </div>
-            </div>
-            <div class="hero-actions">
-                <a href="#register" class="btn btn-primary">Register Now</a>
-                <a href="#about" class="btn btn-secondary">Learn More</a>
-            </div>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About MathHacks</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p class="lead">
-                        MathHacks is more than just a hackathon – it's a celebration of the beauty and power of mathematics in solving real-world challenges.
-                    </p>
-                    <p>
-                        Whether you're a seasoned developer, a math enthusiast, or a curious beginner, MathHacks provides the perfect platform to explore the intersection of mathematics, technology, and innovation. Our participants work on projects ranging from data visualization and educational tools to algorithmic solutions and mathematical art.
-                    </p>
-                    <div class="stats">
-                        <div class="stat">
-                            <span class="stat-number">48</span>
-                            <span class="stat-label">Hours</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">$10K</span>
-                            <span class="stat-label">in Prizes</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">20+</span>
-                            <span class="stat-label">Mentors</span>
-                        </div>
+            <div class="event-details">
+                <div class="event-info">
+                    <div class="info-item">
+                        <div class="info-label">When</div>
+                        <div class="info-value">February 2026<br><span style="font-size: 0.9rem; opacity: 0.8;">(Weekend TBD)</span></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Who</div>
+                        <div class="info-value">High School Students</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Format</div>
+                        <div class="info-value">In-Person Hackathon</div>
                     </div>
                 </div>
-                <div class="about-features">
-                    <div class="feature">
-                        <div class="feature-icon">🧮</div>
-                        <h3>Mathematical Focus</h3>
-                        <p>Projects that showcase the beauty and utility of mathematical concepts and algorithms.</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">🤝</div>
-                        <h3>Collaborative Learning</h3>
-                        <p>Work with teammates from diverse backgrounds and skill levels to create amazing projects.</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">🏆</div>
-                        <h3>Recognition & Prizes</h3>
-                        <p>Compete for exciting prizes while building your portfolio and network.</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">👨‍🏫</div>
-                        <h3>Expert Mentorship</h3>
-                        <p>Get guidance from industry professionals and academic researchers.</p>
-                    </div>
-                </div>
+            </div>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScOA0EszeYl55dcroWt6urPBOHgRWos7Rz7ZBndyhVwS3Wv3w/viewform?usp=header" class="cta-button" target="_blank">
+                Register Your Interest
+            </a>
+
+            <div class="social-links">
+                <a href="https://www.instagram.com/mathhacksto" class="social-link" target="_blank">
+                    <img src="assets/icons8-instagram-24.png" alt="Instagram" class="social-icon"> @mathhacksto
+                </a>
+                <a href="https://www.linkedin.com/company/mathhacksto" class="social-link" target="_blank">
+                    <img src="assets/icons8-linkedin-24.png" alt="LinkedIn" class="social-icon"> @mathhacksto
+                </a>
             </div>
         </div>
-    </section>
-
-    <!-- Schedule Section -->
-    <section id="schedule" class="schedule">
-        <div class="container">
-            <h2 class="section-title">Event Schedule</h2>
-            <div class="schedule-container">
-                <div class="day">
-                    <h3 class="day-title">Day 1 - Friday, March 15</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="time">6:00 PM</div>
-                            <div class="event">
-                                <h4>Registration & Check-in</h4>
-                                <p>Welcome reception and team formation</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="time">7:00 PM</div>
-                            <div class="event">
-                                <h4>Opening Ceremony</h4>
-                                <p>Keynote speech and challenge introduction</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="time">8:00 PM</div>
-                            <div class="event">
-                                <h4>Hacking Begins!</h4>
-                                <p>Start working on your projects</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="time">10:00 PM</div>
-                            <div class="event">
-                                <h4>Midnight Snacks</h4>
-                                <p>Food and networking break</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="day">
-                    <h3 class="day-title">Day 2 - Saturday, March 16</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="time">9:00 AM</div>
-                            <div class="event">
-                                <h4>Breakfast</h4>
-                                <p>Fuel up for continued hacking</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="time">11:00 AM</div>
-                            <div class="event">
-                                <h4>Workshop: Math Visualization</h4>
-                                <p>Learn to create stunning mathematical visualizations</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="time">1:00 PM</div>
-                            <div class="event">
-                                <h4>Lunch</h4>
-                                <p>Midday meal and mentor meetings</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="time">3:00 PM</div>
-                            <div class="event">
-                                <h4>Workshop: Algorithm Design</h4>
-                                <p>Optimize your mathematical algorithms</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="time">7:00 PM</div>
-                            <div class="event">
-                                <h4>Dinner</h4>
-                                <p>Evening meal and team check-ins</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="day">
-                    <h3 class="day-title">Day 3 - Sunday, March 17</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="time">9:00 AM</div>
-                            <div class="event">
-                                <h4>Final Breakfast</h4>
-                                <p>Last meal before submissions</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="time">12:00 PM</div>
-                            <div class="event">
-                                <h4>Submissions Due</h4>
-                                <p>Final project submissions</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="time">1:00 PM</div>
-                            <div class="event">
-                                <h4>Project Presentations</h4>
-                                <p>Teams present their solutions</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="time">4:00 PM</div>
-                            <div class="event">
-                                <h4>Awards Ceremony</h4>
-                                <p>Winners announcement and closing</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Prizes Section -->
-    <section id="prizes" class="prizes">
-        <div class="container">
-            <h2 class="section-title">Prizes & Awards</h2>
-            <div class="prizes-grid">
-                <div class="prize-card grand-prize">
-                    <div class="prize-rank">🥇</div>
-                    <h3>Grand Prize</h3>
-                    <div class="prize-amount">$5,000</div>
-                    <p>For the most innovative and impactful mathematical solution</p>
-                    <ul class="prize-includes">
-                        <li>Cash prize for each team member</li>
-                        <li>Mentorship opportunities</li>
-                        <li>Featured on MathHacks website</li>
-                    </ul>
-                </div>
-
-                <div class="prize-card">
-                    <div class="prize-rank">🥈</div>
-                    <h3>Second Place</h3>
-                    <div class="prize-amount">$3,000</div>
-                    <p>For exceptional technical execution and mathematical depth</p>
-                </div>
-
-                <div class="prize-card">
-                    <div class="prize-rank">🥉</div>
-                    <h3>Third Place</h3>
-                    <div class="prize-amount">$2,000</div>
-                    <p>For creative problem-solving and strong presentation</p>
-                </div>
-
-                <div class="prize-card special">
-                    <div class="prize-rank">🎨</div>
-                    <h3>Best Visualization</h3>
-                    <div class="prize-amount">$1,000</div>
-                    <p>For the most beautiful and intuitive mathematical visualization</p>
-                </div>
-
-                <div class="prize-card special">
-                    <div class="prize-rank">🎓</div>
-                    <h3>Best Educational Tool</h3>
-                    <div class="prize-amount">$1,000</div>
-                    <p>For tools that make math more accessible and engaging</p>
-                </div>
-
-                <div class="prize-card special">
-                    <div class="prize-rank">🚀</div>
-                    <h3>Most Innovative</h3>
-                    <div class="prize-amount">$1,000</div>
-                    <p>For the most creative and original approach to mathematical problems</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="faq">
-        <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Who can participate in MathHacks?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>MathHacks is open to all students (high school, undergraduate, and graduate), as well as recent graduates. No prior hackathon experience is required, but basic programming knowledge is helpful.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Do I need to be a math major to participate?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Not at all! While we encourage mathematical thinking, participants come from all backgrounds including computer science, engineering, design, and more. What matters is enthusiasm for problem-solving.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        What should I bring?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Bring your laptop, charger, any peripherals you prefer, and a positive attitude! We'll provide food, drinks, swag, and workspace. Don't forget a change of clothes if you plan to stay overnight.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        How are teams formed?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Teams can be 1-4 people. You can come with a pre-formed team or join team formation activities at the event. We'll help match people with complementary skills and interests.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        What kind of projects are expected?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Projects should have a mathematical component - this could be data analysis, algorithm visualization, educational games, mathematical art, optimization tools, or anything that showcases mathematical concepts creatively.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Is there a registration fee?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>No! MathHacks is completely free to attend. This includes all meals, workshops, mentorship, and swag. Just bring your passion for math and problem-solving!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Registration/Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h2>Ready to Join?</h2>
-                    <p>Registration is now open! Secure your spot at MathHacks 2024 and be part of an amazing mathematical adventure.</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <span class="contact-icon">📧</span>
-                            <div>
-                                <h4>Email</h4>
-                                <p>info@mathhacks.org</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">📱</span>
-                            <div>
-                                <h4>Social Media</h4>
-                                <p>@MathHacks on Twitter, Instagram</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">🌐</span>
-                            <div>
-                                <h4>Website</h4>
-                                <p>mathhacks.org</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="register-form" id="register">
-                    <h3>Register Now</h3>
-                    <form class="registration-form">
-                        <div class="form-group">
-                            <input type="text" id="name" required>
-                            <label for="name">Full Name</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" required>
-                            <label for="email">Email Address</label>
-                        </div>
-                        <div class="form-group">
-                            <select id="level" required>
-                                <option value="">Select Education Level</option>
-                                <option value="high-school">High School</option>
-                                <option value="undergraduate">Undergraduate</option>
-                                <option value="graduate">Graduate</option>
-                                <option value="recent-grad">Recent Graduate</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="school">
-                            <label for="school">School/University</label>
-                        </div>
-                        <div class="form-group">
-                            <select id="experience">
-                                <option value="">Programming Experience</option>
-                                <option value="beginner">Beginner (0-1 years)</option>
-                                <option value="intermediate">Intermediate (1-3 years)</option>
-                                <option value="advanced">Advanced (3+ years)</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">Register for MathHacks</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <span class="math-symbol">∫</span>
-                        <span>MathHacks</span>
-                    </div>
-                    <p>Where Mathematics Meets Innovation</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Event</h4>
-                    <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#schedule">Schedule</a></li>
-                        <li><a href="#prizes">Prizes</a></li>
-                        <li><a href="#faq">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Connect</h4>
-                    <ul>
-                        <li><a href="mailto:info@mathhacks.org">Email</a></li>
-                        <li><a href="#">Twitter</a></li>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Discord</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 MathHacks. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+    </div>
 </body>
 </html>
