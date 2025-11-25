@@ -3,288 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MathHacks</title>
+
+    <!-- Primary Meta Tags -->
+    <title>MathHacks - Learn the Foundations of Programming</title>
+    <meta name="title" content="MathHacks - Learn the Foundations of Programming">
+    <meta name="description" content="MathHacks is a learning-focused hackathon designed for high schoolers interested in computer science.">
+    <meta name="keywords" content="hackathon, high school, programming, computer science, coding, math, Toronto, student event, learn to code, free workshop">
+    <meta name="author" content="MathHacks">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mathhacks.ca/">
+    <meta property="og:title" content="MathHacks - Learn the Foundations of Programming">
+    <meta property="og:description" content="MathHacks is a learning-focused hackathon designed for high schoolers interested in computer science.">
+    <meta property="og:image" content="https://mathhacks.ca/assets/logo/Logo%20(Plain).png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mathhacks.ca/">
+    <meta property="twitter:title" content="MathHacks - Learn the Foundations of Programming">
+    <meta property="twitter:description" content="MathHacks is a learning-focused hackathon designed for high schoolers interested in computer science.">
+    <meta property="twitter:image" content="https://mathhacks.ca/assets/logo/Logo%20(Plain).png">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/logo/Logo Cropped.png">
+    <link rel="apple-touch-icon" href="assets/logo/Logo Cropped.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://mathhacks.ca/">
+
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "MathHacks",
+      "description": "MathHacks is a learning-focused hackathon designed for high schoolers interested in computer science.",
+      "startDate": "2026-02-21T08:00",
+      "endDate": "2026-02-21T21:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "TBD",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Toronto",
+          "addressRegion": "ON",
+          "addressCountry": "CA"
         }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segill UI', sans-serif;
-            background: linear-gradient(0deg, #46014b 0%, #600723 100%);
-            min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        /* Mathematical symbols background */
-        .bg-symbols {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.1;
-            overflow: hidden;
-            z-index: 0;
-        }
-
-        /* Cyber grid overlay */
-        .cyber-grid {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(174, 0, 161, 0.15) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(174, 0, 161, 0.15) 1px, transparent 1px);
-            background-size: 50px 50px;
-            opacity: 1;
-            z-index: 0;
-            mask: radial-gradient(ellipse at center, white 0%, white 15%, rgba(255,255,255,0.8) 28%, rgba(255,255,255,0.6) 38%, rgba(255,255,255,0.4) 55%, rgba(255,255,255,0.25) 75%, rgba(255,255,255,0.15) 100%);
-            -webkit-mask: radial-gradient(ellipse at center, white 0%, white 15%, rgba(255,255,255,0.8) 28%, rgba(255,255,255,0.6) 38%, rgba(255,255,255,0.4) 55%, rgba(255,255,255,0.25) 75%, rgba(255,255,255,0.15) 100%);
-        }
-
-
-        .symbol {
-            position: absolute;
-            color: rgba(255, 255, 255, 0.3);
-            font-size: 2rem;
-            font-weight: 300;
-            animation: float 6s ease-in-out infinite;
-            user-select: none;
-            pointer-events: none;
-        }
-
-        .symbol:nth-child(1) { top: 17%; left: 23%; animation-delay: 0s; }
-        .symbol:nth-child(2) { top: 73%; right: 41%; animation-delay: -0.8s; }
-        .symbol:nth-child(3) { top: 91%; left: 67%; animation-delay: -1.6s; }
-        .symbol:nth-child(4) { top: 6%; right: 29%; animation-delay: -2.4s; }
-        .symbol:nth-child(5) { top: 54%; left: 84%; animation-delay: -3.2s; }
-        .symbol:nth-child(6) { top: 39%; right: 73%; animation-delay: -4.0s; }
-        .symbol:nth-child(7) { top: 82%; left: 16%; animation-delay: -0.4s; }
-        .symbol:nth-child(8) { top: 27%; right: 58%; animation-delay: -1.2s; }
-        .symbol:nth-child(9) { top: 64%; left: 91%; animation-delay: -2.0s; }
-        .symbol:nth-child(10) { top: 11%; left: 47%; animation-delay: -2.8s; }
-        .symbol:nth-child(11) { top: 78%; right: 14%; animation-delay: -3.6s; }
-        .symbol:nth-child(12) { top: 33%; left: 76%; animation-delay: -0.6s; }
-        .symbol:nth-child(13) { top: 89%; right: 82%; animation-delay: -1.4s; }
-        .symbol:nth-child(14) { top: 21%; left: 36%; animation-delay: -2.2s; }
-        .symbol:nth-child(15) { top: 67%; right: 93%; animation-delay: -3.0s; }
-        .symbol:nth-child(16) { top: 44%; left: 19%; animation-delay: -3.8s; }
-        .symbol:nth-child(17) { top: 8%; left: 61%; animation-delay: -0.2s; }
-        .symbol:nth-child(18) { top: 76%; right: 37%; animation-delay: -1.0s; }
-        .symbol:nth-child(19) { top: 52%; left: 88%; animation-delay: -1.8s; }
-        .symbol:nth-child(20) { top: 29%; right: 71%; animation-delay: -2.6s; }
-        .symbol:nth-child(21) { top: 95%; left: 42%; animation-delay: -3.4s; }
-        .symbol:nth-child(22) { top: 13%; right: 86%; animation-delay: -4.2s; }
-        .symbol:nth-child(23) { top: 71%; left: 24%; animation-delay: -0.6s; }
-        .symbol:nth-child(24) { top: 48%; right: 59%; animation-delay: -1.4s; }
-        .symbol:nth-child(25) { top: 86%; left: 77%; animation-delay: -2.2s; }
-        .symbol:nth-child(26) { top: 19%; left: 53%; animation-delay: -3.0s; }
-        .symbol:nth-child(27) { top: 61%; right: 31%; animation-delay: -3.8s; }
-        .symbol:nth-child(28) { top: 37%; left: 94%; animation-delay: -0.8s; }
-        .symbol:nth-child(29) { top: 84%; right: 68%; animation-delay: -1.6s; }
-        .symbol:nth-child(30) { top: 26%; left: 12%; animation-delay: -2.4s; }
-        .symbol:nth-child(31) { top: 74%; right: 45%; animation-delay: -3.2s; }
-        .symbol:nth-child(32) { top: 41%; left: 83%; animation-delay: -4.0s; }
-
-        @keyframes float {
-            0%, 100% { 
-                transform: translateY(0px) translateX(0px) rotate(0deg); 
-            }
-            25% { 
-                transform: translateY(-15px) translateX(10px) rotate(5deg); 
-            }
-            50% { 
-                transform: translateY(-20px) translateX(0px) rotate(0deg); 
-            }
-            75% { 
-                transform: translateY(-10px) translateX(-10px) rotate(-5deg); 
-            }
-        }
-
-        .container {
-            position: relative;
-            z-index: 1;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-        }
-
-        .content {
-            text-align: center;
-            color: white;
-            max-width: 600px;
-        }
-
-        .logo-container {
-            margin-bottom: 2rem;
-        }
-
-        .logo {
-            width: 180px;
-            height: 180px;
-            margin: 0 auto 1rem;
-            background: rgba(255, 255, 255, 0.063);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(2px);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            /* box-shadow: 0 8px 32px rgba(105, 105, 105, 0.3); */
-        }
-
-        .logo svg {
-            width: 60px;
-            height: 60px;
-        }
-
-        .title {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(90deg, #ff0043 0%, #ff0043 25%, #ae00a1 50%, #9600b6 75%, #9430cb 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: none;
-        }
-
-        .subtitle {
-            font-size: 1.5rem;
-            font-weight: 400;
-            margin-bottom: 1rem;
-            opacity: 0.9;
-        }
-
-        .description {
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
-            opacity: 0.8;
-            line-height: 1.6;
-        }
-
-        .event-details {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 2rem;
-            margin-bottom: 3rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .event-info {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .info-item {
-            text-align: center;
-        }
-
-        .info-label {
-            font-size: 0.9rem;
-            opacity: 0.7;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .info-value {
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff0043, #ae00a1);
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 32px rgba(255, 0, 67, 0.3);
-            border: none;
-            cursor: pointer;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(255, 0, 67, 0.5);
-        }
-
-        .social-links {
-            margin-top: 3rem;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        .social-link {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .social-link:hover {
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .footer {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .title {
-                font-size: 3rem;
-            }
-            
-            .subtitle {
-                font-size: 1.3rem;
-            }
-            
-            .description {
-                font-size: 1.1rem;
-            }
-            
-            .event-info {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-            
-            .social-links {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .container {
-                padding: 1rem;
-            }
-        }
-    </style>
+      },
+      "image": "https://mathhacks.ca/assets/logo/Logo%20(Plain).png",
+      "organizer": {
+        "@type": "Organization",
+        "name": "MathHacks",
+        "url": "https://mathhacks.ca",
+        "email": "info@mathhacks.ca",
+        "sameAs": [
+          "https://www.instagram.com/mathhacksto",
+          "https://www.linkedin.com/company/mathhacksto"
+        ]
+      },
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "CAD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://docs.google.com/forms/d/e/1FAIpQLScOA0EszeYl55dcroWt6urPBOHgRWos7Rz7ZBndyhVwS3Wv3w/viewform?usp=header",
+        "validFrom": "2025-01-01"
+      },
+      "audience": {
+        "@type": "EducationalAudience",
+        "educationalRole": "High School Student"
+      }
+    }
+    </script>
 </head>
 <body>
     <div class="cyber-grid"></div>
@@ -328,7 +128,7 @@
         <div class="content">
             <div class="logo-container">
                 <div class="logo">
-                    <img src="assets/logo/Logo (Plain).png" alt="MathHacks" class="brand-logo" width="212" height="212s">
+                    <img src="assets/logo/Logo (Plain).png" alt="MathHacks" class="brand-logo" width="212" height="212">
                 </div>
             </div>
 
@@ -342,15 +142,15 @@
                 <div class="event-info">
                     <div class="info-item">
                         <div class="info-label">When</div>
-                        <div class="info-value">February 2026<br><span style="font-size: 0.9rem; opacity: 0.8;">(Weekend TBD)</span></div>
+                        <div class="info-value">February 21, 2026</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Where</div>
+                        <div class="info-value">Location TBD</div>
                     </div>
                     <div class="info-item">
                         <div class="info-label">Who</div>
                         <div class="info-value">High School Students</div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label">Format</div>
-                        <div class="info-value">In-Person Hackathon</div>
                     </div>
                 </div>
             </div>
@@ -358,6 +158,71 @@
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScOA0EszeYl55dcroWt6urPBOHgRWos7Rz7ZBndyhVwS3Wv3w/viewform?usp=header" class="cta-button" target="_blank">
                 Register Your Interest
             </a>
+
+            <div class="faq-section">
+                <h2 class="faq-title">Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            What is MathHacks?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>MathHacks is a learning-focused hackathon designed for high schoolers interested in computer science. We'll be hosting exciting workshops, keynotes, mini-events, and much more!</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Do I need prior programming experience?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No, you do not need any knowledge about programming to participate! MathHacks is designed to be beginner-friendly. You only need to be ready to learn!</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            What should I bring?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Bring your laptop, charger, and readiness to learn! We'll provide all food and drink for the entire day.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Is there a fee to attend?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We're happy to say MathHacks is completely free! As long as you're a high school student, you're invited to come learn to code with us.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Can I attend with friends?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely! We encourage you to bring your friends. You can work together and learn as a team. It's a great way to make the event even more fun as well as educational!</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            How long is the event?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>MathHacks is a one-day event on February 21, 2026. It will take place from 8am-9pm, with exact times subject to change.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="social-links">
                 <a href="https://www.instagram.com/mathhacksto" class="social-link" target="_blank">
@@ -369,9 +234,31 @@
                 <a href="mailto:info@mathhacks.ca" class="social-link">
                     <img src="assets/icons8-email-48.png" alt="Email" class="social-icon" style="width: 24px;"> info@mathhacks.ca
                 </a>
-
             </div>
         </div>
     </div>
+
+    <script>
+        // FAQ Accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
