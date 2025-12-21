@@ -522,15 +522,39 @@ body {
     }
 
     .sponsors-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .sponsor-card {
+        padding: 1rem;
+        min-height: 120px;
+    }
+
+    .sponsor-card-small {
+        min-height: 100px;
+        padding: 1rem;
+    }
+
+    .sponsor-logo-placeholder img {
+        max-height: 70px;
     }
 
     .sponsor-card-premium {
-        grid-column: span 1;
-        min-height: 180px;
+        grid-column: span 2;
+        min-height: 150px;
+        padding: 1.5rem;
+    }
+
+    .sponsor-card-premium .sponsor-logo-placeholder img {
+        max-height: 100px;
     }
 
     .sponsor-card-premium .sponsor-name {
         font-size: 1.3rem;
+    }
+
+    .sponsors-title {
+        font-size: 1.75rem;
     }
 }

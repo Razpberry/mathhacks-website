@@ -32,6 +32,9 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://mathhacks.ca/">
 
+    <!-- Theme Color for Mobile Browsers -->
+    <meta name="theme-color" content="#600723">
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -125,18 +128,17 @@
     </div>
 
     <div class="container">
-        <div class="content">
-            <div class="logo-container">
+        <main class="content">
+            <header class="logo-container">
                 <div class="logo">
                     <img src="assets/logo/Logo (Plain).png" alt="MathHacks" class="brand-logo" width="212" height="212">
                 </div>
-            </div>
-
-            <h1 class="title">MathHacks</h1>
-            <p class="subtitle">Learn the foundations of programming</p>
-            <p class="description">
-                We're a math-themed hackathon designed for high school students interested in computer science. We focus on your learning, not the trends or fluff.
-            </p>
+                <h1 class="title">MathHacks</h1>
+                <p class="subtitle">Learn the foundations of programming</p>
+                <p class="description">
+                    We're a math-themed hackathon designed for high school students interested in computer science. We focus on your learning, not the trends or fluff.
+                </p>
+            </header>
 
             <div class="event-details">
                 <div class="event-info">
@@ -155,7 +157,7 @@
                 </div>
             </div>
 
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScOA0EszeYl55dcroWt6urPBOHgRWos7Rz7ZBndyhVwS3Wv3w/viewform?usp=header" class="cta-button" target="_blank">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScOA0EszeYl55dcroWt6urPBOHgRWos7Rz7ZBndyhVwS3Wv3w/viewform?usp=header" class="cta-button" target="_blank" rel="noopener">
                 Register Your Interest
             </a>
 
@@ -163,47 +165,47 @@
                 <h2 class="sponsors-title">Our Sponsors</h2>
                 <p class="sponsors-description">Made possible by our amazing sponsors</p>
                 <div class="sponsors-container">
-                    <a href="https://blackberry.qnx.com" class="sponsor-card sponsor-card-premium" target="_blank" rel="sponsored">
+                    <a href="https://blackberry.qnx.com" class="sponsor-card sponsor-card-premium" target="_blank" rel="sponsored noopener">
                         <div class="sponsor-logo-placeholder">
                             <img src="assets/sponsors/QNX-Logo-QNX-CORAL-RGB.svg" alt="QNX">
                         </div>
                     </a>
-                    <a href="https://codecrafters.io" class="sponsor-card sponsor-card-small" target="_blank" rel="sponsored">
+                    <a href="https://codecrafters.io" class="sponsor-card sponsor-card-small" target="_blank" rel="sponsored noopener">
                         <div class="sponsor-logo-placeholder">
                             <img src="assets/sponsors/CodeCrafters.io full logo (White text).png" alt="CodeCrafters">
                         </div>
                     </a>
-                    <a href="https://www.interviewcake.com" class="sponsor-card sponsor-card-small" target="_blank" rel="sponsored">
+                    <a href="https://www.interviewcake.com" class="sponsor-card sponsor-card-small" target="_blank" rel="sponsored noopener">
                         <div class="sponsor-logo-placeholder">
                             <img src="assets/sponsors/cake_logo_white.svg" alt="Interview Cake">
                         </div>
                     </a>
-                    <a href="https://nordvpn.com/hackathons" class="sponsor-card sponsor-card-small" target="_blank" rel="sponsored">
+                    <a href="https://nordvpn.com/hackathons" class="sponsor-card sponsor-card-small" target="_blank" rel="sponsored noopener">
                         <div class="sponsor-logo-placeholder">
                             <img src="assets/sponsors/NordVPN_Logo_RGB_Primary_Blue_White (1).png" alt="NordVPN">
                         </div>
                     </a>
-                    <a href="https://nordpass.com" class="sponsor-card sponsor-card-small" target="_blank" rel="sponsored">
+                    <a href="https://nordpass.com" class="sponsor-card sponsor-card-small" target="_blank" rel="sponsored noopener">
                         <div class="sponsor-logo-placeholder">
                             <img src="assets/sponsors/NordPass-white-horizontal (2).png" alt="NordPass">
                         </div>
                     </a>
-                    <a href="https://surfshark.com" class="sponsor-card sponsor-card-small" target="_blank" rel="sponsored">
+                    <a href="https://surfshark.com" class="sponsor-card sponsor-card-small" target="_blank" rel="sponsored noopener">
                         <div class="sponsor-logo-placeholder">
                             <img src="assets/sponsors/Color=Orange, Type=Horizontal, On=Black.png" alt="Surfshark">
                         </div>
                     </a>
-                    <a href="https://incogni.com" class="sponsor-card sponsor-card-small" target="_blank" rel="sponsored">
+                    <a href="https://incogni.com" class="sponsor-card sponsor-card-small" target="_blank" rel="sponsored noopener">
                         <div class="sponsor-logo-placeholder">
                             <img src="assets/sponsors/Incogni_logo_white_better_quality.png" alt="Incogni">
                         </div>
                     </a>
-                    <a href="https://saily.com" class="sponsor-card sponsor-card-small" target="_blank" rel="sponsored">
+                    <a href="https://saily.com" class="sponsor-card sponsor-card-small" target="_blank" rel="sponsored noopener">
                         <div class="sponsor-logo-placeholder">
                             <img src="assets/sponsors/saily-logo-white (3).png" alt="Saily">
                         </div>
                     </a>
-                    <a href="https://nexos.ai" class="sponsor-card sponsor-card-small" target="_blank" rel="sponsored">
+                    <a href="https://nexos.ai" class="sponsor-card sponsor-card-small" target="_blank" rel="sponsored noopener">
                         <div class="sponsor-logo-placeholder">
                             <img src="assets/sponsors/nexos-ai-logo-MAIN-white-horizontal.png" alt="Nexos AI">
                         </div>
@@ -276,18 +278,21 @@
                 </div>
             </div>
 
-            <div class="social-links">
-                <a href="https://www.instagram.com/mathhacksto" class="social-link" target="_blank">
-                    <img src="assets/icons8-instagram-48.png" alt="Instagram" class="social-icon" style="width: 24px;"> @mathhacksto
+            <footer class="social-links">
+                <a href="https://www.instagram.com/mathhacksto" class="social-link" target="_blank" rel="noopener">
+                    <img src="assets/icons8-instagram-48.png" alt="Instagram" class="social-icon" width="24" height="24"> @mathhacksto
                 </a>
-                <a href="https://www.linkedin.com/company/mathhacksto" class="social-link" target="_blank">
-                    <img src="assets/icons8-linkedin-60.png" alt="LinkedIn" class="social-icon" style="width: 24px;"> @mathhacksto
+                <a href="https://www.linkedin.com/company/mathhacksto" class="social-link" target="_blank" rel="noopener">
+                    <img src="assets/icons8-linkedin-60.png" alt="LinkedIn" class="social-icon" width="24" height="24"> @mathhacksto
                 </a>
                 <a href="mailto:info@mathhacks.ca" class="social-link">
-                    <img src="assets/icons8-email-48.png" alt="Email" class="social-icon" style="width: 24px;"> info@mathhacks.ca
+                    <img src="assets/icons8-email-48.png" alt="Email" class="social-icon" width="24" height="24"> info@mathhacks.ca
                 </a>
-            </div>
-        </div>
+                <a href="https://hcb.hackclub.com/donations/start/mathhacks-hackathon" class="social-link" target="_blank" rel="noopener">
+                    <span style="font-size: 24px; display: inline-block; width: 24px; text-align: center;">♥</span> Donate
+                </a>
+            </footer>
+        </main>
         
     </div>
 
