@@ -245,7 +245,7 @@ body {
 
 .sponsors-container {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     width: 100%;
     max-width: 550px;
@@ -265,7 +265,7 @@ body {
     min-height: 80px;
     text-decoration: none;
     cursor: pointer;
-    grid-column: span 2;
+    grid-column: span 1;
 }
 
 .sponsor-card:hover {
@@ -313,21 +313,12 @@ body {
 
 /* Premium Sponsor Card */
 .sponsor-card-premium {
-    grid-column: span 6;
+    grid-column: span 3;
     min-height: 120px;
     position: relative;
     background: rgba(255, 215, 0, 0.1);
     border: 2px solid rgba(255, 215, 0, 0.5);
     box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
-}
-
-/* Center the last two sponsor cards */
-.sponsor-card:nth-last-child(2) {
-    grid-column: 2 / span 2;
-}
-
-.sponsor-card:nth-last-child(1) {
-    grid-column: 4 / span 2;
 }
 
 .sponsor-card-premium::after {
@@ -597,23 +588,15 @@ body {
 
 @media (max-width: 1024px) {
     .sponsors-container {
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .sponsor-card {
-        grid-column: span 2;
+        grid-column: span 1;
     }
 
     .sponsor-card-premium {
-        grid-column: span 6;
-    }
-
-    .sponsor-card:nth-last-child(2) {
-        grid-column: 2 / span 2;
-    }
-
-    .sponsor-card:nth-last-child(1) {
-        grid-column: 4 / span 2;
+        grid-column: span 3;
     }
 }
 
@@ -658,14 +641,14 @@ body {
     }
 
     .sponsors-container {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 0.75rem;
     }
 
     .sponsor-card {
         padding: 0.75rem;
         min-height: 65px;
-        grid-column: span 2;
+        grid-column: span 1;
     }
 
     .sponsor-card-small {
@@ -678,17 +661,9 @@ body {
     }
 
     .sponsor-card-premium {
-        grid-column: span 4;
+        grid-column: span 3;
         min-height: 130px;
         padding: 1.5rem;
-    }
-
-    .sponsor-card:nth-last-child(2) {
-        grid-column: 1 / span 2;
-    }
-
-    .sponsor-card:nth-last-child(1) {
-        grid-column: 3 / span 2;
     }
 
     .sponsor-card-premium .sponsor-logo-placeholder img {
