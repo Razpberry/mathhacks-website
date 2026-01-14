@@ -381,6 +381,90 @@ body {
     }
 }
 
+/* Partners Section */
+.partners-section {
+    margin-top: 4rem;
+    width: 100%;
+}
+
+.partners-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.partners-description {
+    font-size: 1rem;
+    opacity: 0.7;
+    margin-bottom: 2rem;
+}
+
+.partners-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.partner-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    width: 250px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.partner-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(174, 0, 161, 0.3);
+}
+
+.partner-logo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partner-logo-placeholder img {
+    max-width: 100%;
+    max-height: 100px;
+    object-fit: contain;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+/* Individual partner logo size adjustments */
+.partner-logo-placeholder img[alt="Hack Club Bank"] {
+    max-height: 85px !important;
+    width: auto !important;
+}
+
+.partner-logo-placeholder img[alt="De La Salle College"] {
+    max-height: 100px !important;
+}
+
+
+
+.partner-card:hover .partner-logo-placeholder img {
+    opacity: 1;
+}
+
 /* Team Section */
 .team-section {
     margin-top: 4rem;
@@ -713,5 +797,33 @@ body {
 
     .team-role {
         font-size: 0.8rem;
+    }
+
+    .partners-title {
+        font-size: 1.75rem;
+    }
+
+    .partners-container {
+        gap: 1rem;
+    }
+
+    .partner-card {
+        width: 100%;
+        max-width: 280px;
+        min-height: 100px;
+        padding: 1.25rem;
+    }
+
+    .partner-logo-placeholder img {
+        max-height: 75px;
+    }
+
+    /* Mobile individual partner logo size adjustments */
+    .partner-logo-placeholder img[alt="Hack Club Bank"] {
+        max-height: 65px !important;
+    }
+
+    .partner-logo-placeholder img[alt="De La Salle College"] {
+        max-height: 75px !important;
     }
 }
