@@ -314,7 +314,9 @@ body {
 /* Premium Sponsor Card */
 .sponsor-card-premium {
     grid-column: span 3;
-    min-height: 120px;
+    min-height: 160px;
+    width: 120%;
+    margin-left: -10%;
     position: relative;
     background: rgba(255, 215, 0, 0.1);
     border: 2px solid rgba(255, 215, 0, 0.5);
@@ -697,6 +699,23 @@ body {
     transform: translateY(-2px);
 }
 
+.icons-attribution {
+    margin: 0.5rem 0 0 0;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+}
+
+.icons-attribution a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.icons-attribution a:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
 .footer {
     position: absolute;
     bottom: 2rem;
@@ -743,6 +762,12 @@ body {
         align-items: center;
     }
 
+    .icons-attribution {
+        margin-top: 1rem;
+        text-align: center;
+        width: 100%;
+    }
+
     .container {
         padding: 1rem;
     }
@@ -784,6 +809,8 @@ body {
         grid-column: span 3;
         min-height: 130px;
         padding: 1.5rem;
+        width: 100%;
+        margin-left: 0;
     }
 
     .sponsor-card-premium .sponsor-logo-placeholder img {
@@ -856,7 +883,7 @@ body {
 
     /* Mobile individual partner logo size adjustments */
     .partner-logo-placeholder img[alt="Hack Club Bank"] {
-        max-height: 65px !important;
+        max-height: 75px !important;
     }
 
     .partner-logo-placeholder img[alt="De La Salle College"] {
