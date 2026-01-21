@@ -822,6 +822,10 @@ body {
         max-height: 55px !important;
     }
 
+    .sponsor-logo-placeholder img[alt="HausWorth"] {
+        transform: scale(1.8) !important;
+    }
+
     .sponsor-logo-placeholder img[alt="NordVPN"],
     .sponsor-logo-placeholder img[alt="Incogni"],
     .sponsor-logo-placeholder img[alt="Saily"] {
