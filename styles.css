@@ -312,6 +312,58 @@ body {
 }
 
 /* Premium Sponsor Card */
+/* Platinum Sponsor Card - Top Tier */
+.sponsor-card-platinum {
+    grid-column: 1 / -1;
+    min-height: 220px;
+    width: 130%;
+    margin-left: -15%;
+    position: relative;
+    background: linear-gradient(135deg, rgba(173, 216, 230, 0.15) 0%, rgba(176, 224, 230, 0.1) 50%, rgba(173, 216, 230, 0.15) 100%);
+    border: 3px solid rgba(173, 216, 230, 0.7);
+    box-shadow: 0 0 50px rgba(176, 224, 230, 0.4), 0 0 100px rgba(173, 216, 230, 0.2), inset 0 0 30px rgba(224, 255, 255, 0.05);
+}
+
+.sponsor-card-platinum::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, transparent, rgba(224, 255, 255, 0.3), transparent);
+    border-radius: 12px;
+    z-index: -1;
+    animation: platinum-shimmer 3s ease-in-out infinite;
+}
+
+@keyframes platinum-shimmer {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
+.sponsor-card-platinum::after {
+    content: '';
+}
+
+.sponsor-card-platinum .sponsor-logo-placeholder,
+.sponsor-card-platinum .sponsor-name {
+    position: relative;
+    z-index: 1;
+}
+
+.sponsor-card-platinum .sponsor-logo-placeholder img {
+    max-height: 140px;
+    max-width: 80%;
+}
+
+.sponsor-card-platinum:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(176, 224, 230, 0.5), 0 0 120px rgba(173, 216, 230, 0.3);
+    border-color: rgba(224, 255, 255, 0.9);
+}
+
+/* Gold Sponsor Card */
 .sponsor-card-premium {
     grid-column: span 3;
     min-height: 160px;
@@ -737,6 +789,13 @@ body {
     .sponsor-card-premium {
         grid-column: span 3;
     }
+
+    .sponsor-card-platinum {
+        grid-column: 1 / -1;
+        min-height: 220px;
+        width: 120%;
+        margin-left: -10%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -803,6 +862,18 @@ body {
 
     .sponsor-logo-placeholder img {
         max-height: 35px;
+    }
+
+    .sponsor-card-platinum {
+        grid-column: 1 / -1;
+        min-height: 200px;
+        padding: 1.5rem;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .sponsor-card-platinum .sponsor-logo-placeholder img {
+        max-height: 100px !important;
     }
 
     .sponsor-card-premium {
