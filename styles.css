@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segill UI', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: linear-gradient(0deg, #46014b 0%, #600723 100%);
     min-height: 100vh;
     position: relative;
@@ -250,6 +250,16 @@ body {
     width: 100%;
     max-width: 550px;
     margin: 0 auto;
+}
+
+.sponsors-small-container {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .sponsor-card {
