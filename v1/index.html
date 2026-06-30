@@ -5,32 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Primary Meta Tags -->
-    <title>MathHacks 2.0 - Learn the Foundations of Programming</title>
-    <meta name="title" content="MathHacks 2.0 - Learn the Foundations of Programming">
-    <meta name="description" content="MathHacks is a learning-focused hackathon designed for students interested in computer science.">
+    <title>MathHacks 1.0 - Learn the Foundations of Programming</title>
+    <meta name="title" content="MathHacks 1.0 - Learn the Foundations of Programming">
+    <meta name="description" content="MathHacks is a learning-focused hackathon designed for high schoolers interested in computer science.">
     <meta name="keywords" content="mathhacks, hackathon, high school, programming, coding, computer science, math, Toronto, student event, learn to code, free workshop">
     <meta name="author" content="MathHacks">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mathhacks.ca/">
-    <meta property="og:title" content="MathHacks 2.0 - Learn the Foundations of Programming">
-    <meta property="og:description" content="MathHacks is a learning-focused hackathon designed for students interested in computer science.">
+    <meta property="og:url" content="https://mathhacks.ca/v1/">
+    <meta property="og:title" content="MathHacks 1.0 - Learn the Foundations of Programming">
+    <meta property="og:description" content="MathHacks is a learning-focused hackathon designed for high schoolers interested in computer science.">
     <meta property="og:image" content="https://mathhacks.ca/assets/logo/Logo%20(Plain).png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://mathhacks.ca/">
-    <meta property="twitter:title" content="MathHacks 2.0 - Learn the Foundations of Programming">
-    <meta property="twitter:description" content="MathHacks is a learning-focused hackathon designed for students interested in computer science.">
+    <meta property="twitter:url" content="https://mathhacks.ca/v1/">
+    <meta property="twitter:title" content="MathHacks 1.0 - Learn the Foundations of Programming">
+    <meta property="twitter:description" content="MathHacks is a learning-focused hackathon designed for high schoolers interested in computer science.">
     <meta property="twitter:image" content="https://mathhacks.ca/assets/logo/Logo%20(Plain).png">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/logo/Logo%20Cropped.png">
-    <link rel="apple-touch-icon" href="assets/logo/Logo%20Cropped.png">
+    <link rel="icon" type="image/png" href="../assets/logo/Logo%20Cropped.png">
+    <link rel="apple-touch-icon" href="../assets/logo/Logo%20Cropped.png">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://mathhacks.ca/">
+    <link rel="canonical" href="https://mathhacks.ca/v1/">
 
     <!-- Theme Color for Mobile Browsers -->
     <meta name="theme-color" content="#600723">
@@ -39,15 +39,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
 
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Event",
-      "name": "MathHacks 2.0",
-      "description": "MathHacks is a learning-focused hackathon designed for students interested in computer science.",
+      "name": "MathHacks",
+      "description": "MathHacks is a learning-focused hackathon designed for high schoolers interested in computer science.",
+      "startDate": "2026-02-21T08:00",
+      "endDate": "2026-02-21T21:00",
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "location": {
@@ -64,7 +66,7 @@
       "organizer": {
         "@type": "Organization",
         "name": "MathHacks",
-        "url": "https://mathhacks.ca",
+        "url": "https://mathhacks.ca/v1",
         "email": "info@mathhacks.ca",
         "sameAs": [
           "https://www.instagram.com/mathhacksto",
@@ -86,7 +88,6 @@
       }
     }
     </script>
-
     <style>
         .version-nav {
             position: fixed;
@@ -96,7 +97,6 @@
             display: flex;
             gap: 0.5rem;
         }
-
         .version-nav a {
             display: inline-block;
             padding: 0.4rem 0.85rem;
@@ -110,13 +110,11 @@
             background: rgba(255, 255, 255, 0.08);
             transition: background 0.2s, color 0.2s, border-color 0.2s;
         }
-
         .version-nav a:hover {
             background: rgba(255, 255, 255, 0.18);
             color: #fff;
             border-color: rgba(255, 255, 255, 0.4);
         }
-
         .version-nav a.active {
             color: #fff;
             border-color: rgba(255, 255, 255, 0.5);
@@ -126,12 +124,11 @@
 </head>
 <body>
     <nav class="version-nav">
-        <a href="v1/">1.0</a>
-        <a href="#" class="active">2.0</a>
+        <a href="#" class="active">1.0</a>
+        <a href="../">2.0</a>
     </nav>
-
     <div class="cyber-grid"></div>
-
+    
     <div class="bg-symbols">
         <div class="symbol">+</div>
         <div class="symbol">×</div>
@@ -171,164 +168,310 @@
         <main class="content">
             <header class="logo-container">
                 <div class="logo">
-                    <img src="assets/logo/Logo (Plain).png" alt="MathHacks" class="brand-logo" width="212" height="212">
+                    <img src="../assets/logo/Logo (Plain).png" alt="MathHacks" class="brand-logo" width="212" height="212">
                 </div>
-                <h1 class="title">MathHacks 2.0</h1>
+                <h1 class="title">MathHacks</h1>
                 <p class="subtitle">Learn the foundations of programming</p>
                 <p class="description">
-                    We're a math-themed hackathon designed for students interested in computer science. We focus on your learning, not the trends or fluff.
+                    We're a math-themed hackathon designed for high school students interested in computer science. We focus on your learning, not the trends or fluff.
                 </p>
             </header>
 
             <div class="event-details">
-                <div class="info-value">More details coming soon!</div>
-                <!-- <div class="event-info">
+                <div class="event-info">
                     <div class="info-item">
                         <div class="info-label">When</div>
-                        <div class="info-value">TBD</div>
+                        <div class="info-value">February 21, 2026</div>
                     </div>
                     <div class="info-item">
                         <div class="info-label">Where</div>
-                        <div class="info-value">TBD</div>
+                        <div class="info-value">De La Salle College</div>
                     </div>
                     <div class="info-item">
                         <div class="info-label">Who</div>
-                        <div class="info-value">High School + Uni Students</div>
+                        <div class="info-value">High School Students</div>
                     </div>
-                </div> -->
+                </div>
             </div>
 
-            <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLSdiec4_xcR6azpYiBN8SJvce6w_6E8o4dXXQrfOchMb_ETV6w/viewform?usp=dialog" class="cta-button" target="_blank" rel="noopener">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdiec4_xcR6azpYiBN8SJvce6w_6E8o4dXXQrfOchMb_ETV6w/viewform?usp=dialog" class="cta-button" target="_blank" rel="noopener">
                 Register Now
-            </a> -->
+            </a>
 
-            <!-- <div class="sponsors-section">
+            <div class="schedule-section">
+                <h2 class="schedule-title">Schedule</h2>
+                <p class="schedule-description">February 21, 2026</p>
+                <div class="schedule-container">
+                    <div class="schedule-col">
+                        <div class="schedule-item">
+                            <div class="schedule-time">8:00 AM</div>
+                            <div class="schedule-divider"></div>
+                            <div class="schedule-event">Check In + Networking</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-time">8:30 AM</div>
+                            <div class="schedule-divider"></div>
+                            <div class="schedule-event">Opening Ceremony</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-time">9:00 AM</div>
+                            <div class="schedule-divider"></div>
+                            <div class="schedule-event">Hacking Begins</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-time">9:15 AM</div>
+                            <div class="schedule-divider"></div>
+                            <div class="schedule-event">Intro to Python Workshop</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-time">10:00 AM</div>
+                            <div class="schedule-divider"></div>
+                            <div class="schedule-event">Math Industry Applications Talk</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-time">11:00 AM</div>
+                            <div class="schedule-divider"></div>
+                            <div class="schedule-event">Project Management Talk</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-time">12:00 PM</div>
+                            <div class="schedule-divider"></div>
+                            <div class="schedule-event">Lunch</div>
+                        </div>
+                    </div>
+                    <div class="schedule-col">
+                        <div class="schedule-item">
+                            <div class="schedule-time">1:00 PM</div>
+                            <div class="schedule-divider"></div>
+                            <div class="schedule-event">Neural Network Workshop</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-time">2:00 PM</div>
+                            <div class="schedule-divider"></div>
+                            <div class="schedule-event">Clash Royale Tournament</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-time">3:00 PM</div>
+                            <div class="schedule-divider"></div>
+                            <div class="schedule-event">QNX Talk</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-time">6:00 PM</div>
+                            <div class="schedule-divider"></div>
+                            <div class="schedule-event">Hacking Ends + Dinner</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-time">6:15 PM</div>
+                            <div class="schedule-divider"></div>
+                            <div class="schedule-event">Judging Begins</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-time">7:00 PM</div>
+                            <div class="schedule-divider"></div>
+                            <div class="schedule-event">Mini-event Party</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-time">8:30 PM</div>
+                            <div class="schedule-divider"></div>
+                            <div class="schedule-event">Judging Ends + Closing Ceremony</div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="prizes-section">
+                <h2 class="prizes-title">Prizes</h2>
+                <p class="prizes-description">Compete for amazing prizes</p>
+                <div class="prizes-container">
+                    <div class="prizes-overall">
+                        <div class="prize-card prize-first">
+                            <div class="prize-medal">🥇</div>
+                            <div class="prize-place">1st Place</div>
+                            <div class="prize-amount">$500</div>
+                            <ul class="prize-perks">
+                                <li>1-year NordVPN, NordPass, NordProtect &amp; Incogni subscriptions</li>
+                                <li>2-year VIP CodeCrafters membership</li>
+                                <li>1-year premium Brilliant subscription</li>
+                                <li>2 domains from .xyz</li>
+                            </ul>
+                        </div>
+                        <div class="prize-card prize-second">
+                            <div class="prize-medal">🥈</div>
+                            <div class="prize-place">2nd Place</div>
+                            <div class="prize-amount">$200</div>
+                            <ul class="prize-perks">
+                                <li>1-year VIP CodeCrafters membership</li>
+                                <li>1-year premium Brilliant subscription</li>
+                                <li>2 domains from .xyz</li>
+                            </ul>
+                        </div>
+                        <div class="prize-card prize-third">
+                            <div class="prize-medal">🥉</div>
+                            <div class="prize-place">3rd Place</div>
+                            <div class="prize-amount">$100</div>
+                            <ul class="prize-perks">
+                                <li>6-month VIP CodeCrafters membership</li>
+                                <li>1-year premium Brilliant subscription</li>
+                                <li>2 domains from .xyz</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="prizes-special">
+                        <div class="prize-card prize-special-card">
+                            <div class="prize-category">Best Beginner Hack</div>
+                            <div class="prize-amount">$100</div>
+                            <ul class="prize-perks">
+                                <li>1 GB free data for Saily</li>
+                                <li>1-year premium Brilliant subscription</li>
+                                <li>2 domains from .xyz</li>
+                            </ul>
+                        </div>
+                        <div class="prize-card prize-special-card">
+                            <div class="prize-category">Best Application of Theme</div>
+                            <div class="prize-amount">$100</div>
+                            <ul class="prize-perks">
+                                <li>3-month access + €200 credit for nexos.ai</li>
+                                <li>1-year premium Brilliant subscription</li>
+                                <li>2 domains from .xyz</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="prize-disclaimer">*All non-monetary prizes available per member</p>
+                </div>
+            </div>
+
+            <div class="sponsors-section">
                 <h2 class="sponsors-title">Our Sponsors</h2>
                 <p class="sponsors-description">Made possible by our amazing sponsors</p>
                 <div class="sponsors-container">
                     <a href="https://www.rogers.com" class="sponsor-card sponsor-card-platinum" style="overflow: visible;" target="_blank" rel="sponsored noopener">
                         <div class="sponsor-logo-placeholder" style="overflow: visible;">
-                            <img src="assets/sponsors/Rogers_logo.png" alt="Rogers" style="max-height: 180px !important; width: auto;">
+                            <img src="../assets/sponsors/Rogers_logo.png" alt="Rogers" style="max-height: 180px !important; width: auto;">
                         </div>
                     </a>
                     <a href="https://qnx.software/en" class="sponsor-card sponsor-card-premium" target="_blank" rel="sponsored noopener">
                         <div class="sponsor-logo-placeholder">
-                            <img src="assets/sponsors/QNX-Logo-QNX-CORAL-RGB.svg" alt="QNX">
+                            <img src="../assets/sponsors/QNX-Logo-QNX-CORAL-RGB.svg" alt="QNX">
                         </div>
                     </a>
                     <a href="https://hausworth.com" class="sponsor-card sponsor-card-premium" style="overflow: hidden;" target="_blank" rel="sponsored noopener">
                         <div class="sponsor-logo-placeholder" style="overflow: hidden;">
-                            <img src="assets/sponsors/HausWorth_Sq-final-01-removebg-preview.png" alt="HausWorth" style="max-height: 100px !important; transform: scale(2.2);">
+                            <img src="../assets/sponsors/HausWorth_Sq-final-01-removebg-preview.png" alt="HausWorth" style="max-height: 100px !important; transform: scale(2.2);">
                         </div>
                     </a>
                     <div style="grid-column: 1 / -1; display: flex; gap: 1rem; justify-content: center; width: 100%;">
                         <a href="https://smiledigitalhealth.com" class="sponsor-card sponsor-card-silver" style="flex: 1; max-width: 50%; height: 150px; overflow: visible; border: 1px solid rgba(192, 192, 192, 0.6); box-shadow: 0 0 25px rgba(192, 192, 192, 0.35); background: linear-gradient(135deg, rgba(192, 192, 192, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);" target="_blank" rel="sponsored noopener">
                             <div class="sponsor-logo-placeholder" style="overflow: visible;">
-                                <img src="assets/sponsors/smile digital health.png" alt="Smile Digital Health" style="max-height: 115px;">
+                                <img src="../assets/sponsors/smile digital health.png" alt="Smile Digital Health" style="max-height: 115px;">
                             </div>
                         </a>
                         <a href="https://classzoo.app/" class="sponsor-card sponsor-card-silver" style="flex: 1; max-width: 50%; height: 150px; overflow: visible; border: 1px solid rgba(192, 192, 192, 0.6); box-shadow: 0 0 25px rgba(192, 192, 192, 0.35); background: linear-gradient(135deg, rgba(192, 192, 192, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);" target="_blank" rel="sponsored noopener">
                             <div class="sponsor-logo-placeholder" style="overflow: visible;">
-                                <img src="assets/sponsors/ClassZoo.png" alt="ClassZoo" style="max-height: 150px; transform: scale(1.1);">
+                                <img src="../assets/sponsors/ClassZoo.png" alt="ClassZoo" style="max-height: 150px; transform: scale(1.1);">
                             </div>
                         </a>
                     </div>
                     <div style="grid-column: 1 / -1; display: flex; gap: 1rem; justify-content: center; width: 100%; max-width: 500px; margin: 0 auto;">
                         <a href="https://cobsbread.com" class="sponsor-card sponsor-card-bronze" style="flex: 1; max-width: 50%; height: 130px; overflow: visible; border: 1px solid rgba(205, 127, 50, 0.6); box-shadow: 0 0 25px rgba(205, 127, 50, 0.35); background: linear-gradient(135deg, rgba(205, 127, 50, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);" target="_blank" rel="sponsored noopener">
                             <div class="sponsor-logo-placeholder" style="overflow: visible;">
-                                <img src="assets/sponsors/THE ANNEX LOGO.png" alt="Cobs Bread" style="max-height: 150px; filter: brightness(1.25);">
+                                <img src="../assets/sponsors/THE ANNEX LOGO.png" alt="Cobs Bread" style="max-height: 150px; filter: brightness(1.25);">
                             </div>
                         </a>
                         <a href="https://thinkrealtygroup.ca/" class="sponsor-card sponsor-card-bronze" style="flex: 1; max-width: 50%; height: 130px; overflow: visible; border: 1px solid rgba(205, 127, 50, 0.6); box-shadow: 0 0 25px rgba(205, 127, 50, 0.35); background: linear-gradient(135deg, rgba(205, 127, 50, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);" target="_blank" rel="sponsored noopener">
                             <div class="sponsor-logo-placeholder" style="overflow: visible;">
-                                <img src="assets/sponsors/thinkrealtygroup.png" alt="Think Realty Group" style="max-height: 150px; transform: scale(1.3) translateX(5px);">
+                                <img src="../assets/sponsors/thinkrealtygroup.png" alt="Think Realty Group" style="max-height: 150px; transform: scale(1.3) translateX(5px);">
                             </div>
                         </a>
                     </div>
                     <div style="grid-column: 1 / -1; display: flex; gap: 1rem; justify-content: center; width: 100%; max-width: 500px; margin: 0 auto;">
                         <a href="https://www.rjsroadhouse.ca/" class="sponsor-card sponsor-card-bronze" style="flex: 1; max-width: 50%; height: 130px; overflow: visible; border: 1px solid rgba(205, 127, 50, 0.6); box-shadow: 0 0 25px rgba(205, 127, 50, 0.35); background: linear-gradient(135deg, rgba(205, 127, 50, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);" target="_blank" rel="sponsored noopener">
                             <div class="sponsor-logo-placeholder" style="overflow: visible;">
-                                <img src="assets/sponsors/rjs.png" alt="RJS Roadhouse" style="max-height: 150px; transform: scale(0.85);">
+                                <img src="../assets/sponsors/rjs.png" alt="RJS Roadhouse" style="max-height: 150px; transform: scale(0.85);">
                             </div>
                         </a>
                         <a href="https://www.spiritofmath.com/" class="sponsor-card sponsor-card-bronze" style="flex: 1; max-width: 50%; height: 130px; overflow: visible; border: 1px solid rgba(205, 127, 50, 0.6); box-shadow: 0 0 25px rgba(205, 127, 50, 0.35); background: linear-gradient(135deg, rgba(205, 127, 50, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);" target="_blank" rel="sponsored noopener">
                             <div class="sponsor-logo-placeholder" style="overflow: visible;">
-                                <img src="assets/sponsors/SoM Logo Original Colors RGBwith Clearspace.png" alt="Spirit of Math" style="max-height: 130px !important; transform: scale(1.2);">
+                                <img src="../assets/sponsors/SoM Logo Original Colors RGBwith Clearspace.png" alt="Spirit of Math" style="max-height: 130px !important; transform: scale(1.2);">
                             </div>
                         </a>
                     </div>
                     <div class="sponsors-small-container">
                         <a href="https://codecrafters.io" class="sponsor-card sponsor-card-small" style="opacity: 0.9;" target="_blank" rel="sponsored noopener">
                             <div class="sponsor-logo-placeholder">
-                                <img src="assets/sponsors/CodeCrafters.io full logo (White text).png" alt="CodeCrafters">
+                                <img src="../assets/sponsors/CodeCrafters.io full logo (White text).png" alt="CodeCrafters">
                             </div>
                         </a>
                         <a href="https://www.interviewcake.com" class="sponsor-card sponsor-card-small" style="opacity: 0.9;" target="_blank" rel="sponsored noopener">
                             <div class="sponsor-logo-placeholder">
-                                <img src="assets/sponsors/cake_logo_white.svg" alt="Interview Cake">
+                                <img src="../assets/sponsors/cake_logo_white.svg" alt="Interview Cake">
                             </div>
                         </a>
                         <a href="https://nordvpn.com/hackathons" class="sponsor-card sponsor-card-small" style="opacity: 0.9;" target="_blank" rel="sponsored noopener">
                             <div class="sponsor-logo-placeholder">
-                                <img src="assets/sponsors/NordVPN_Logo_RGB_Primary_Blue_White (1).png" alt="NordVPN">
+                                <img src="../assets/sponsors/NordVPN_Logo_RGB_Primary_Blue_White (1).png" alt="NordVPN">
                             </div>
                         </a>
                         <a href="https://nordpass.com" class="sponsor-card sponsor-card-small" style="opacity: 0.9;" target="_blank" rel="sponsored noopener">
                             <div class="sponsor-logo-placeholder">
-                                <img src="assets/sponsors/NordPass-white-horizontal (2).png" alt="NordPass">
+                                <img src="../assets/sponsors/NordPass-white-horizontal (2).png" alt="NordPass">
                             </div>
                         </a>
                         <a href="https://nordprotect.com/" class="sponsor-card sponsor-card-small" style="opacity: 0.9;" target="_blank" rel="sponsored noopener">
                             <div class="sponsor-logo-placeholder">
-                                <img src="assets/sponsors/Color=Orange, Type=Horizontal, On=Black.png" alt="NordProtect">
+                                <img src="../assets/sponsors/Color=Orange, Type=Horizontal, On=Black.png" alt="NordProtect">
                             </div>
                         </a>
                         <a href="https://incogni.com" class="sponsor-card sponsor-card-small" style="opacity: 0.9;" target="_blank" rel="sponsored noopener">
                             <div class="sponsor-logo-placeholder">
-                                <img src="assets/sponsors/Incogni_logo_white_better_quality.png" alt="Incogni">
+                                <img src="../assets/sponsors/Incogni_logo_white_better_quality.png" alt="Incogni">
                             </div>
                         </a>
                         <a href="https://saily.com" class="sponsor-card sponsor-card-small" style="opacity: 0.9;" target="_blank" rel="sponsored noopener">
                             <div class="sponsor-logo-placeholder">
-                                <img src="assets/sponsors/saily-logo-white (3).png" alt="Saily">
+                                <img src="../assets/sponsors/saily-logo-white (3).png" alt="Saily">
                             </div>
                         </a>
                         <a href="https://nexos.ai" class="sponsor-card sponsor-card-small" style="opacity: 0.9;" target="_blank" rel="sponsored noopener">
                             <div class="sponsor-logo-placeholder">
-                                <img src="assets/sponsors/nexos-ai-logo-MAIN-white-horizontal.png" alt="Nexos AI">
+                                <img src="../assets/sponsors/nexos-ai-logo-MAIN-white-horizontal.png" alt="Nexos AI">
                             </div>
                         </a>
                         <a href="https://gen.xyz" class="sponsor-card sponsor-card-small" style="opacity: 0.9;" target="_blank" rel="sponsored noopener">
                             <div class="sponsor-logo-placeholder">
-                                <img src="assets/sponsors/xyz-logo-white.svg" alt="XYZ">
+                                <img src="../assets/sponsors/xyz-logo-white.svg" alt="XYZ">
                             </div>
                         </a>
                         <a href="https://brilliant.org" class="sponsor-card sponsor-card-small" style="opacity: 0.95;" target="_blank" rel="sponsored noopener">
                             <div class="sponsor-logo-placeholder">
-                                <img src="assets/sponsors/Brilliant Logo White with Shadow.png" alt="Brilliant">
+                                <img src="../assets/sponsors/Brilliant Logo White with Shadow.png" alt="Brilliant">
                             </div>
                         </a>
                         <a href="https://www.willowdaleconservatory.com/" class="sponsor-card sponsor-card-small" style="opacity: 0.9;" target="_blank" rel="sponsored noopener">
                             <div class="sponsor-logo-placeholder">
-                                <img src="assets/sponsors/WCMA-Logo-Final - white-full.png" alt="WCMA">
+                                <img src="../assets/sponsors/WCMA-Logo-Final - white-full.png" alt="WCMA">
                             </div>
                         </a>
                         <a href="https://appwizzy.com/" class="sponsor-card sponsor-card-small" style="opacity: 0.9;" target="_blank" rel="sponsored noopener">
                             <div class="sponsor-logo-placeholder">
-                                <img src="assets/sponsors/Appwizzy_logo_dark.png" alt="Appwizzy">
+                                <img src="../assets/sponsors/Appwizzy_logo_dark.png" alt="Appwizzy">
                             </div>
                         </a>
                     </div>
                 </div>
-            </div> -->
+            </div>
 
             <div class="partners-section">
                 <h2 class="partners-title">Our Partners</h2>
                 <p class="partners-description">In collaboration with our amazing partners</p>
                 <div class="partners-container">
+                    <a href="https://www.delasalle.ca/" class="partner-card" target="_blank" rel="noopener">
+                        <div class="partner-logo-placeholder">
+                            <img src="../assets/sponsors/De_La_Salle_Logo_New.png" alt="De La Salle College">
+                        </div>
+                    </a>
                     <a href="https://hackclub.com/bank/" class="partner-card" target="_blank" rel="noopener">
                         <div class="partner-logo-placeholder">
-                            <img src="assets/sponsors/hcb-light.png" alt="Hack Club Bank">
+                            <img src="../assets/sponsors/hcb-light.png" alt="Hack Club Bank">
                         </div>
                     </a>
                 </div>
@@ -339,29 +482,34 @@
                 <p class="team-description">Made possible by our amazing team</p>
                 <div class="team-container">
                     <div class="team-card">
-                        <img src="assets/team/Nick.png" alt="Nicholas Stakoun" class="team-photo">
+                        <img src="../assets/team/Nick.png" alt="Nicholas Stakoun" class="team-photo">
                         <div class="team-name">Nicholas Stakoun</div>
                         <div class="team-role">Founder</div>
                     </div>
                     <div class="team-card">
-                        <img src="assets/team/Ethan L.png" alt="Ethan Li" class="team-photo">
+                        <img src="../assets/team/Ethan L.png" alt="Ethan Li" class="team-photo">
                         <div class="team-name">Ethan Li</div>
                         <div class="team-role">Networking</div>
                     </div>
                     <div class="team-card">
-                        <img src="assets/team/Gabby.png" alt="Gabrielle Leung" class="team-photo">
+                        <img src="../assets/team/Gabby.png" alt="Gabrielle Leung" class="team-photo">
                         <div class="team-name">Gabrielle Leung</div>
                         <div class="team-role">Networking</div>
                     </div>
                     <div class="team-card">
-                        <img src="assets/team/Ethan G.png" alt="Ethan Gelfand-Link" class="team-photo">
+                        <img src="../assets/team/Ethan G.png" alt="Ethan Gelfand-Link" class="team-photo">
                         <div class="team-name">Ethan Gelfand-Link</div>
                         <div class="team-role">Marketing</div>
                     </div>
                     <div class="team-card">
-                        <img src="assets/team/Alex.jpg" alt="Alexandra Reeves" class="team-photo">
+                        <img src="../assets/team/Alex.jpg" alt="Alexandra Reeves" class="team-photo">
                         <div class="team-name">Alexandra Reeves</div>
                         <div class="team-role">Finance</div>
+                    </div>
+                    <div class="team-card">
+                        <img src="../assets/team/Cindy.png" alt="Cindy Ma" class="team-photo">
+                        <div class="team-name">Cindy Ma</div>
+                        <div class="team-role">Design</div>
                     </div>
                 </div>
             </div>
@@ -375,7 +523,7 @@
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer">
-                            <p>MathHacks is a learning-focused hackathon designed for students interested in computer science. We'll be hosting an in-person event with exciting workshops, keynotes, mini-events, and much more!</p>
+                            <p>MathHacks is a learning-focused hackathon designed for high schoolers interested in computer science. We'll be hosting an in-person event with exciting workshops, keynotes, mini-events, and much more!</p>
                         </div>
                     </div>
 
@@ -395,7 +543,7 @@
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer">
-                            <p>Bring your laptop, charger, and readiness to learn! We'll provide all food and drink for the entire event.</p>
+                            <p>Bring your laptop, charger, and readiness to learn! We'll provide all food and drink for the entire day.</p>
                         </div>
                     </div>
 
@@ -417,7 +565,7 @@
                         <div class="faq-answer">
                             <p>Absolutely! We encourage you to bring your friends. You can work together and learn as a team (Max. 4 people). It's a great way to make the event even more fun as well as educational!</p>
                         </div>
-                    </div>
+                    </div> 
 
                     <div class="faq-item">
                         <button class="faq-question">
@@ -425,7 +573,7 @@
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer">
-                            <p>We plan for MathHacks to be a weekend long, optionally overnight event. Stay tuned for more info!</p>
+                            <p>MathHacks will take place all day from 8am-9pm, with exact times subject to change.</p>
                         </div>
                     </div>
                 </div>
@@ -433,16 +581,16 @@
 
             <footer class="social-links">
                 <a href="https://www.instagram.com/mathhacksto" class="social-link" target="_blank" rel="noopener">
-                    <img src="assets/icons8-instagram-48.png" alt="Instagram" class="social-icon" width="24" height="24"> @mathhacksto
+                    <img src="../assets/icons8-instagram-48.png" alt="Instagram" class="social-icon" width="24" height="24"> @mathhacksto
                 </a>
                 <a href="https://www.linkedin.com/company/mathhacksto" class="social-link" target="_blank" rel="noopener">
-                    <img src="assets/icons8-linkedin-60.png" alt="LinkedIn" class="social-icon" width="24" height="24"> @mathhacksto
+                    <img src="../assets/icons8-linkedin-60.png" alt="LinkedIn" class="social-icon" width="24" height="24"> @mathhacksto
                 </a>
                 <a href="https://www.tiktok.com/@mathhacksto" class="social-link" target="_blank" rel="noopener">
-                    <img src="assets/icons8-tiktok-60.png" alt="TikTok" class="social-icon" width="24" height="24"> @mathhacksto
+                    <img src="../assets/icons8-tiktok-60.png" alt="TikTok" class="social-icon" width="24" height="24"> @mathhacksto
                 </a>
                 <a href="mailto:info@mathhacks.ca" class="social-link">
-                    <img src="assets/icons8-email-48.png" alt="Email" class="social-icon" width="24" height="24"> info@mathhacks.ca
+                    <img src="../assets/icons8-email-48.png" alt="Email" class="social-icon" width="24" height="24"> info@mathhacks.ca
                 </a>
                 <a href="https://hcb.hackclub.com/donations/start/mathhacks-hackathon" class="social-link" target="_blank" rel="noopener">
                     <span style="font-size: 24px; display: inline-block; width: 24px; text-align: center;">♥</span> Donate
@@ -450,7 +598,7 @@
             </footer>
             <p class="icons-attribution">Icons by <a href="https://icons8.com" target="_blank" rel="noopener">Icons8</a> <br>Fiscally sponsored by The Hack Foundation, a 501(c)(3) nonprofit</p>
         </main>
-
+        
     </div>
 
     <script>
