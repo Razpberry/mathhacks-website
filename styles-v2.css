@@ -367,6 +367,14 @@ body {
     opacity: 0.9;
 }
 
+.description {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 620px;
+    margin: 0 auto 2rem;
+    opacity: 0.8;
+}
+
 /* Hero fact tiles — visual stand-in for a countdown, using facts we actually know */
 .hero-stats {
     display: flex;
@@ -1302,6 +1310,7 @@ body {
     .version-pill { padding: 0.3rem 0.55rem; font-size: 0.7rem; }
 
     .title { font-size: clamp(2rem, 9vw, 3.4rem); }
+    .description { font-size: 0.95rem; }
 
     .hero-stats { max-width: 320px; gap: 0.75rem; }
 
