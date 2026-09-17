@@ -982,7 +982,7 @@ body {
 
 .partners-container {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 1.25rem;
     width: 100%;
     max-width: 600px;
@@ -1037,6 +1037,11 @@ body {
 
 .partner-logo-placeholder img[alt="De La Salle College"] {
     max-height: 100px !important;
+}
+
+.partner-logo-placeholder img[alt="Connected Minds"] {
+    max-height: 70px !important;
+    width: auto !important;
 }
 
 .partner-card:hover .partner-logo-placeholder img {
@@ -1351,6 +1356,7 @@ body {
     .partner-logo-placeholder img { max-height: 75px; }
     .partner-logo-placeholder img[alt="Hack Club Bank"] { max-height: 75px !important; }
     .partner-logo-placeholder img[alt="De La Salle College"] { max-height: 75px !important; }
+    .partner-logo-placeholder img[alt="Connected Minds"] { max-height: 60px !important; }
 
     .math-decor { display: none; }
 }
