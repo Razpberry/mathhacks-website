@@ -917,6 +917,7 @@ body {
 }
 
 .sponsor-logo-placeholder img[alt="NordVPN"],
+.sponsor-logo-placeholder img[alt="NordPass"],
 .sponsor-logo-placeholder img[alt="Incogni"],
 .sponsor-logo-placeholder img[alt="Saily"] {
     max-height: 35px !important;
@@ -1342,6 +1343,7 @@ body {
     .sponsor-logo-placeholder img[alt="QNX"] { max-height: clamp(30px, 17vw, 90px) !important; }
     .sponsor-logo-placeholder img[alt="HausWorth"] { transform: scale(1.8) !important; }
     .sponsor-logo-placeholder img[alt="NordVPN"],
+    .sponsor-logo-placeholder img[alt="NordPass"],
     .sponsor-logo-placeholder img[alt="Incogni"],
     .sponsor-logo-placeholder img[alt="Saily"] { max-height: 26px !important; }
     .sponsor-card-premium .sponsor-name { font-size: 1.1rem; }
