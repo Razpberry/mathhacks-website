@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 300" width="860" height="300" role="img" aria-label="MathForma — learning platform logo">
+  <defs>
+    <radialGradient id="csphere" cx="38%" cy="32%" r="75%">
+      <stop offset="0%" stop-color="#ff7d97"/>
+      <stop offset="45%" stop-color="#e21c4b"/>
+      <stop offset="100%" stop-color="#a3002c"/>
+    </radialGradient>
+    <linearGradient id="cconeFace" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1f348f"/>
+      <stop offset="55%" stop-color="#2e52d4"/>
+      <stop offset="100%" stop-color="#5d7cf0"/>
+    </linearGradient>
+    <linearGradient id="cbell" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eafbf5"/>
+      <stop offset="100%" stop-color="#c7eee2"/>
+    </linearGradient>
+    <clipPath id="cbadge"><rect x="30" y="30" width="240" height="240" rx="46"/></clipPath>
+  </defs>
+
+  <!-- ===== BADGE ===== -->
+  <rect x="30" y="30" width="240" height="240" rx="46" fill="#eef4fc" stroke="#d2e0f2" stroke-width="2"/>
+  <g clip-path="url(#cbadge)" opacity="0.55" stroke="#bcd2ee" stroke-width="1.4">
+    <path d="M30 78 H270 M30 126 H270 M30 174 H270 M30 222 H270"/>
+    <path d="M78 30 V270 M126 30 V270 M174 30 V270 M222 30 V270"/>
+  </g>
+
+  <!-- ===== ORIGINAL COLLAGE, refined & scaled into the badge ===== -->
+  <g clip-path="url(#cbadge)">
+    <g transform="translate(18,14) scale(0.45)">
+      <!-- cube -->
+      <g stroke="#7c611a" stroke-width="3" stroke-linejoin="round">
+        <polygon points="92,332 196,332 196,432 92,432" fill="#ddccA0"/>
+        <polygon points="92,332 132,300 236,300 196,332" fill="#f1e6c4"/>
+        <polygon points="196,332 236,300 236,400 196,432" fill="#bd9a2c"/>
+      </g>
+      <!-- paraboloid -->
+      <path d="M246,352 C252,248 292,168 330,160 C368,168 408,248 414,352 A84,20 0 0 1 246,352 Z"
+            fill="url(#cbell)" stroke="#19b78d" stroke-width="3"/>
+      <path d="M268,300 A62,12 0 0 0 392,300" fill="none" stroke="#3ccaa3" stroke-width="2"/>
+      <path d="M256,332 A74,16 0 0 0 404,332" fill="none" stroke="#3ccaa3" stroke-width="2"/>
+      <path d="M330,160 C320,250 300,310 286,352" fill="none" stroke="#3ccaa3" stroke-width="2"/>
+      <path d="M330,160 C340,250 360,310 374,352" fill="none" stroke="#3ccaa3" stroke-width="2"/>
+      <path d="M330,160 C330,250 330,310 330,372" fill="none" stroke="#3ccaa3" stroke-width="2"/>
+      <!-- cone -->
+      <ellipse cx="210" cy="360" rx="58" ry="15" fill="#1c2f86"/>
+      <path d="M152,360 L213,176 L268,360 A58,15 0 0 1 152,360 Z" fill="url(#cconeFace)" stroke="#16266e" stroke-width="2"/>
+      <path d="M213,176 L196,360 A58,15 0 0 1 152,360 Z" fill="#23399c" opacity="0.55"/>
+      <!-- sphere -->
+      <circle cx="332" cy="402" r="70" fill="url(#csphere)" stroke="#8e0026" stroke-width="2"/>
+      <ellipse cx="312" cy="378" rx="22" ry="13" fill="#ffd2dc" opacity="0.55"/>
+      <!-- compass / divider -->
+      <g stroke="#111" fill="#111" stroke-linecap="round">
+        <circle cx="455" cy="182" r="12" stroke="none"/>
+        <rect x="450" y="150" width="10" height="26" rx="4"/>
+        <path d="M455,190 L424,406" stroke-width="9" fill="none"/>
+        <path d="M455,190 L492,400" stroke-width="9" fill="none"/>
+        <path d="M492,400 l8,22 -16,2 Z" stroke="none"/>
+        <path d="M424,406 l-4,20 8,0 Z" stroke="none"/>
+        <path d="M438,300 Q455,318 474,300" fill="none" stroke-width="4"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- ===== WORDMARK ===== -->
+  <text x="300" y="156" font-family="Georgia, 'Times New Roman', serif" font-size="80" font-weight="700" fill="#f5c842" letter-spacing="1">MathForma</text>
+  <g>
+    <line x1="302" y1="182" x2="326" y2="182" stroke="#e8345b" stroke-width="5"/>
+    <text x="338" y="198" font-family="'Helvetica Neue', Arial, sans-serif" font-size="38" font-weight="600" letter-spacing="3" fill="#27776a">LEARNING PLATFORM</text>
+  </g>
+</svg>
