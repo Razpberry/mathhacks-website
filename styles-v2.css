@@ -1057,7 +1057,7 @@ body {
 
 .team-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 1.25rem;
     width: 100%;
 }
@@ -1067,14 +1067,14 @@ body {
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-radius: var(--card-radius);
-    padding: 1.75rem 1rem 1.5rem;
+    padding: 1.75rem 0.5rem 1.5rem;
     border: 1px solid var(--card-border);
     box-shadow: var(--card-shadow);
     transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 a.team-card {
@@ -1114,11 +1114,12 @@ a.team-card {
 .team-role {
     color: var(--accent-magenta);
     filter: brightness(1.6);
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.2px;
     font-weight: 600;
+    line-height: 1.4;
+    text-wrap: balance;
 }
 
 /* FAQ Section — numbered list */
@@ -1356,7 +1357,7 @@ a.team-card {
     .team-container { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 1rem; }
     .team-photo { width: 84px; height: 84px; }
     .team-name { font-size: 0.9rem; }
-    .team-role { font-size: 0.65rem; }
+    .team-role { font-size: 0.72rem; }
 
     .partners-container { gap: 1rem; justify-content: center; }
     .partner-card { width: 100%; max-width: 280px; min-height: 100px; padding: 1.25rem; }
