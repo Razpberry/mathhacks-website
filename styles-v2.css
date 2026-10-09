@@ -783,48 +783,56 @@ body {
     width: 100%;
 }
 
-.sponsors-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+/* Tiered logo grid: each tier is a centred, wrapping row whose column
+   count sets card width, so higher tiers get bigger cards. */
+.sponsor-tiers {
+    --tier-gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--tier-gap);
     width: 100%;
-    max-width: 550px;
+    max-width: 880px;
     margin: 0 auto;
 }
 
-.sponsors-small-container {
-    grid-column: 1 / -1;
+.sponsor-tier {
+    --cols: 1;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
-    max-width: 500px;
-    margin: 0 auto;
-    width: 100%;
+    gap: var(--tier-gap);
 }
+
+.sponsor-tier > .sponsor-card {
+    flex: 0 0 calc((100% - (var(--cols) - 1) * var(--tier-gap)) / var(--cols));
+}
+
+.sponsor-tier-platinum { --cols: 1; }
+.sponsor-tier-gold     { --cols: 2; }
+.sponsor-tier-silver   { --cols: 3; }
+.sponsor-tier-bronze   { --cols: 3.5; }
+.sponsor-tier-inkind   { --cols: 5; }
 
 .sponsor-card {
     background: var(--card-bg);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-radius: var(--card-radius);
-    padding: 1rem;
+    padding: 1rem 1.25rem;
     border: 1px solid var(--card-border);
-    box-shadow: var(--card-shadow);
-    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: none;
+    transition: transform 0.25s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 80px;
+    min-width: 0;
+    overflow: hidden;
     text-decoration: none;
     cursor: pointer;
-    grid-column: span 1;
 }
 
 .sponsor-card:hover {
     transform: translateY(-4px);
-    border-color: var(--accent-magenta);
-    box-shadow: var(--card-shadow), 0 0 24px rgba(174, 0, 161, 0.25);
 }
 
 .sponsor-logo-placeholder {
@@ -839,77 +847,32 @@ body {
     max-width: 100%;
     max-height: 50px;
     object-fit: contain;
-    opacity: 0.9;
-    transition: opacity 0.3s ease;
 }
 
-.sponsor-card:hover .sponsor-logo-placeholder img {
-    opacity: 1;
+/* Card heights step down with each tier */
+.sponsor-card-platinum { height: 200px; }
+.sponsor-card-platinum .sponsor-logo-placeholder img { max-height: 110px; max-width: 75%; }
+
+.sponsor-card-premium { height: 150px; }
+.sponsor-card-premium .sponsor-logo-placeholder img { max-height: 100px; }
+
+.sponsor-card-silver { height: 130px; }
+.sponsor-card-silver .sponsor-logo-placeholder img { max-height: 80px; }
+
+.sponsor-card-bronze { height: 120px; }
+.sponsor-card-bronze .sponsor-logo-placeholder img { max-height: 72px; }
+
+.sponsor-card-small { height: 76px; padding: 0.75rem 1rem; }
+.sponsor-card-small .sponsor-logo-placeholder img { max-height: 34px; }
+
+/* Individual logo adjustments (padding baked into the source files) */
+.sponsor-logo-placeholder img[alt="HausWorth"] {
+    max-height: 100% !important;
+    transform: scale(1.5);
 }
 
-.sponsor-name {
-    color: rgba(255, 255, 255, 0.9);
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-
-.sponsor-card-small {
-    min-height: 70px;
-    padding: 0.75rem;
-    flex: 0 1 150px;
-}
-
-.sponsor-card-small .sponsor-name {
-    font-size: 0.85rem;
-}
-
-.sponsor-card-platinum {
-    grid-column: 1 / -1;
-    min-height: 220px;
-    width: 130%;
-    margin-left: -15%;
-    position: relative;
-    background: rgba(173, 216, 230, 0.08);
-    border: 1px solid rgba(173, 216, 230, 0.6);
-    box-shadow: var(--card-shadow), 0 0 40px rgba(176, 224, 230, 0.3);
-}
-
-.sponsor-card-platinum .sponsor-logo-placeholder,
-.sponsor-card-platinum .sponsor-name {
-    position: relative;
-    z-index: 1;
-}
-
-.sponsor-card-platinum .sponsor-logo-placeholder img {
-    max-height: 140px;
-    max-width: 80%;
-}
-
-.sponsor-card-platinum:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--card-shadow), 0 0 50px rgba(176, 224, 230, 0.4);
-    border-color: rgba(224, 255, 255, 0.85);
-}
-
-.sponsor-card-premium {
-    grid-column: span 3;
-    min-height: 160px;
-    width: 120%;
-    margin-left: -10%;
-    position: relative;
-    background: rgba(255, 215, 0, 0.07);
-    border: 1px solid rgba(255, 215, 0, 0.4);
-    box-shadow: var(--card-shadow), 0 0 24px rgba(255, 215, 0, 0.2);
-}
-
-.sponsor-card-premium .sponsor-logo-placeholder,
-.sponsor-card-premium .sponsor-name {
-    position: relative;
-    z-index: 1;
-}
-
-.sponsor-card-premium .sponsor-logo-placeholder img {
-    max-height: 100px;
+.sponsor-logo-placeholder img[alt="RISE"] {
+    max-height: 44px !important;
 }
 
 .sponsor-logo-placeholder img[alt="QNX"] {
@@ -920,59 +883,7 @@ body {
 .sponsor-logo-placeholder img[alt="NordPass"],
 .sponsor-logo-placeholder img[alt="Incogni"],
 .sponsor-logo-placeholder img[alt="Saily"] {
-    max-height: 35px !important;
-}
-
-.sponsor-card-premium .sponsor-name {
-    font-size: 1.5rem;
-    background: linear-gradient(135deg, #FFD700, #FFA500, #FFD700);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
-}
-
-.sponsor-card-premium:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--card-shadow), 0 0 40px rgba(255, 215, 0, 0.35);
-    border-color: rgba(255, 215, 0, 0.65);
-}
-
-.sponsor-card-silver {
-    min-height: 120px;
-    position: relative;
-    background: rgba(192, 192, 192, 0.04);
-    border: 1px solid rgba(192, 192, 192, 0.25);
-}
-
-.sponsor-card-silver .sponsor-logo-placeholder {
-    position: relative;
-    z-index: 1;
-}
-
-.sponsor-card-silver:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--card-shadow), 0 0 24px rgba(192, 192, 192, 0.2);
-    border-color: rgba(192, 192, 192, 0.4);
-}
-
-.sponsor-card-inkind {
-    grid-column: 1 / -1;
-    min-height: 120px;
-    position: relative;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.sponsor-card-inkind .sponsor-logo-placeholder {
-    position: relative;
-    z-index: 1;
-}
-
-.sponsor-card-inkind:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--card-shadow), 0 0 22px rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.3);
+    max-height: 30px !important;
 }
 
 /* Partners Section */
@@ -986,7 +897,7 @@ body {
     justify-content: center;
     gap: 1.25rem;
     width: 100%;
-    max-width: 600px;
+    max-width: 880px;
     margin: 0 auto;
     flex-wrap: wrap;
 }
@@ -998,21 +909,19 @@ body {
     border-radius: var(--card-radius);
     padding: 1.5rem;
     border: 1px solid var(--card-border);
-    box-shadow: var(--card-shadow);
-    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: none;
+    transition: transform 0.25s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100px;
-    width: 250px;
+    height: 170px;
+    width: 360px;
     text-decoration: none;
     cursor: pointer;
 }
 
 .partner-card:hover {
     transform: translateY(-4px);
-    border-color: var(--accent-red);
-    box-shadow: var(--card-shadow), 0 0 28px rgba(255, 0, 67, 0.25);
 }
 
 .partner-logo-placeholder {
@@ -1025,14 +934,14 @@ body {
 
 .partner-logo-placeholder img {
     max-width: 100%;
-    max-height: 100px;
+    max-height: 120px;
     object-fit: contain;
     opacity: 0.9;
     transition: opacity 0.3s ease;
 }
 
 .partner-logo-placeholder img[alt="Hack Club Bank"] {
-    max-height: 85px !important;
+    max-height: 115px !important;
     width: auto !important;
 }
 
@@ -1041,7 +950,7 @@ body {
 }
 
 .partner-logo-placeholder img[alt="Connected Minds"] {
-    max-height: 70px !important;
+    max-height: 95px !important;
     width: auto !important;
 }
 
@@ -1307,13 +1216,6 @@ a.team-card {
     color: rgba(255, 255, 255, 0.75);
 }
 
-@media (max-width: 1024px) {
-    .sponsors-container { grid-template-columns: repeat(3, 1fr); }
-    .sponsor-card { grid-column: span 1; }
-    .sponsor-card-premium { grid-column: span 3; }
-    .sponsor-card-platinum { grid-column: 1 / -1; min-height: 220px; width: 120%; margin-left: -10%; }
-}
-
 @media (max-width: 768px) {
     :root { --nav-height: 64px; }
 
@@ -1335,24 +1237,31 @@ a.team-card {
     .faq-item.active .faq-answer { padding: 0 1.25rem 1.1rem 3.15rem; }
     .faq-answer p { font-size: 0.92rem; }
 
-    .sponsors-container { grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
-    .sponsor-card { padding: 0.75rem; min-height: 65px; grid-column: span 1; }
-    .sponsor-card-small { min-height: 60px; padding: 0.6rem; }
-    .sponsor-logo-placeholder img { max-height: 35px; }
+    /* Cap columns on phones, as the reference sites do */
+    .sponsor-tiers { --tier-gap: 0.75rem; }
+    .sponsor-tier-gold { --cols: 1; }
+    .sponsor-tier-silver,
+    .sponsor-tier-bronze { --cols: 2; }
+    .sponsor-tier-inkind { --cols: 3; }
+    .sponsor-card { padding: 0.75rem; }
 
-    .sponsor-card-platinum { grid-column: 1 / -1; min-height: 200px; padding: 1.5rem; width: 100%; margin-left: 0; }
-    .sponsor-card-platinum .sponsor-logo-placeholder img { max-height: 180px !important; transform: scale(1.2); }
-
-    .sponsor-card-premium { grid-column: span 3; min-height: 130px; padding: 1.5rem; width: 100%; margin-left: 0; }
-    .sponsor-card-premium:has(img[alt="QNX"]) { height: 130px; }
+    .sponsor-card-platinum { height: 140px; }
+    .sponsor-card-platinum .sponsor-logo-placeholder img { max-height: 72px; max-width: 85%; }
+    .sponsor-card-premium { height: 110px; }
     .sponsor-card-premium .sponsor-logo-placeholder img { max-height: 80px; }
+    .sponsor-card-silver { height: 100px; }
+    .sponsor-card-silver .sponsor-logo-placeholder img { max-height: 60px; }
+    .sponsor-card-bronze { height: 94px; }
+    .sponsor-card-bronze .sponsor-logo-placeholder img { max-height: 48px; }
+    .sponsor-card-small { height: 60px; padding: 0.6rem; }
+    .sponsor-card-small .sponsor-logo-placeholder img { max-height: 28px; }
+
+    .sponsor-logo-placeholder img[alt="RISE"] { max-height: 36px !important; }
     .sponsor-logo-placeholder img[alt="QNX"] { max-height: clamp(30px, 17vw, 90px) !important; }
-    .sponsor-logo-placeholder img[alt="HausWorth"] { transform: scale(1.8) !important; }
     .sponsor-logo-placeholder img[alt="NordVPN"],
     .sponsor-logo-placeholder img[alt="NordPass"],
     .sponsor-logo-placeholder img[alt="Incogni"],
-    .sponsor-logo-placeholder img[alt="Saily"] { max-height: 26px !important; }
-    .sponsor-card-premium .sponsor-name { font-size: 1.1rem; }
+    .sponsor-logo-placeholder img[alt="Saily"] { max-height: 24px !important; }
 
     .team-container { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 1rem; }
     .team-photo { width: 84px; height: 84px; }
@@ -1360,11 +1269,11 @@ a.team-card {
     .team-role { font-size: 0.72rem; }
 
     .partners-container { gap: 1rem; justify-content: center; }
-    .partner-card { width: 100%; max-width: 280px; min-height: 100px; padding: 1.25rem; }
-    .partner-logo-placeholder img { max-height: 75px; }
-    .partner-logo-placeholder img[alt="Hack Club Bank"] { max-height: 75px !important; }
+    .partner-card { width: 100%; max-width: 340px; height: 140px; padding: 1.25rem; }
+    .partner-logo-placeholder img { max-height: 95px; }
+    .partner-logo-placeholder img[alt="Hack Club Bank"] { max-height: 95px !important; }
     .partner-logo-placeholder img[alt="De La Salle College"] { max-height: 75px !important; }
-    .partner-logo-placeholder img[alt="Connected Minds"] { max-height: 60px !important; }
+    .partner-logo-placeholder img[alt="Connected Minds"] { max-height: 80px !important; }
 
     .math-decor { display: none; }
 }
