@@ -1087,6 +1087,14 @@ a.team-card {
     transition: border-color 0.25s ease;
 }
 
+.team-photo-top {
+    object-position: center top;
+}
+
+.team-photo[alt="Shreemayi Podder"] {
+    object-position: center 20%;
+}
+
 .team-card:hover .team-photo {
     border-color: var(--accent-magenta);
 }
